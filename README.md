@@ -64,3 +64,25 @@ Florence-2 由 Microsoft 于 2024 年 6 月发布，是在 MIT 许可下开源�
 关于Florence-2模型参数为开源模型，此提供其base-ft与large-ft供选择
 
 模型性能与其大小有关，根据自身需求进行选择不同的模型参数
+
+官方Florence-2模型参数链接为：
+
+https://huggingface.co/microsoft/Florence-2-base-ft
+
+https://huggingface.co/microsoft/Florence-2-large-ft
+# 模型训练
+本项目提供RetinaFace三种网络架构resnet50、mobilenet0.25、shufflenetv2_Final进行对比实验
+
+# 测试评估
+评估 widerface val：
+
+1.需要先生成相应的文本文件
+
+```python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50```
+
+２．在widerface_evaluate中进行评估
+```text
+cd ./widerface_evaluate
+python setup.py build_ext --inplace
+python evaluation.py
+```
