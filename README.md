@@ -121,7 +121,6 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 
 ![单场景检测](detection_results/detection_1.jpg)  
 
-
   
 ![多场景检测](detection_results/detection_2.jpg)  
 
