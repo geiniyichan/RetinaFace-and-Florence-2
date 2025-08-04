@@ -118,8 +118,13 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 </table>
 
 ### 效果展示
-![Uploading image.png…]()
-![Uploading image.png…]()
+
+![单场景检测](detection_results/detection_1.jpg)  
+
+
+  
+![多场景检测](detection_results/detection_2.jpg)  
+
 
 # 模型训练
 
