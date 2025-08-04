@@ -108,25 +108,25 @@ python yolo111111.py
 
 # 测试评估
 
-RetinaFace模型评估 widerface val：
+一、RetinaFace模型评估 widerface val：
 
 1.需要先生成相应的文本文件
 
-python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2```
+```python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
 
-２．在widerface_evaluate中进行评估
+2.在widerface_evaluate中进行评估
 ```text
 cd ./widerface_evaluate
 python setup.py build_ext --inplace
 python evaluation.py
 ```
 
-RetinaFace模型评估FDDB：
+二、RetinaFace模型评估FDDB：
 
 数据集目录应为：
 ```text
 ./data/FDDB/images/
-
+```
 测试命令：
 ```text
 python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
@@ -135,7 +135,19 @@ python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50
 
 - --trained_model 指定训练好的模型权重文件路径
 - --network 指定 backbone 网络，可选 mobile0.25 或 resnet50 或 shufflenetv2
-  
+
+三、基线模型yolov8评估widerface val：
+1.需要先生成相应的文本文件
+
+```python yolo_test.py```
+
+2.在widerface_evaluate中进行评估
+```text
+cd ./widerface_evaluate
+python setup.py build_ext --inplace
+python evaluation.py
+```
+（与RetinaFace测试相同）
 # 大规模人群画像实现流程
 
 1.RetinaFace模型进行人脸检测
@@ -156,4 +168,6 @@ python Pytorch_Retinaface/detect_single_image.py --trained_model ./weights/Resne
 python xiazai.py
 ```
 
-其中，xiazai.py为Florence-2的执行py，```task_prompt = "<DETAILED_CAPTION>"```可进行需求修改，如需要更详细的描述：<MORE_DETAILED_CAPTION>，可以进行替换。执行后会对单一图像进行详细的英文人脸描述
+其中，xiazai.py为Florence-2的执行py，其中```task_prompt = "<DETAILED_CAPTION>"```可进行需求修改
+
+如需要更详细的描述：<MORE_DETAILED_CAPTION>，可以进行替换。执行后会对单一图像进行详细的英文人脸描述
