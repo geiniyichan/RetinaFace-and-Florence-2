@@ -24,7 +24,7 @@ CUDA  12.4
 需下载widerface数据集进行模型训练与测试
 
 数据集目录格式：
-text
+```text
  ./data/widerface/
     train/
       images/
@@ -177,6 +177,7 @@ python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50
 - --network 指定 backbone 网络，可选 mobile0.25 或 resnet50 或 shufflenetv2
 
 三、基线模型yolov8评估widerface val：
+
 1.需要先生成相应的文本文件
 ```text
 python yolo_test.py
@@ -191,7 +192,7 @@ python evaluation.py
 （与RetinaFace测试相同）
 # 大规模人群画像实现流程
 
-1.RetinaFace模型进行人脸检测
+### 1.RetinaFace模型进行人脸检测
 
 使用 detect_single_image.py 脚本对单张图片进行人脸检测
 
@@ -199,11 +200,13 @@ python evaluation.py
 ```text
 python Pytorch_Retinaface/detect_single_image.py --trained_model ./weights/Resnet50_Final.pth --image_path ./test.jpg
 ```
-2.得到大规模人群的人脸检测图像
+### 2.得到大规模人群的人脸检测图像
+
+<!-- 单张图片展示 -->
+![大规模人脸检测效果](大规模人脸检测.png)
 
 
-
-3.进行切割的基础上，使用Florence-2模型进行语义描述
+### 3.进行切割的基础上，使用Florence-2模型进行语义描述
 
 对单一人脸图像进行详细描述任务的命令：
 ```text
