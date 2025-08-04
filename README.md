@@ -1,0 +1,2 @@
+# geiniyichan-RetinaFace-and-Florence-2
+该项目使用开源的人脸检测模型RetinaFace与语义描述模型Florence-2相结合，对大规模人群进行人脸检测并对其进行详细描述
