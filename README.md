@@ -87,6 +87,32 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 
 模型下载完整文件夹后放在root根目录即可，命名为```Florence-2-base-ft```与```Florence-2-base-ft```
 
+# RetinaFace性能结果
+三种不同网络架构评估结果对比：
+| 网络架构       | 难易程度 (Eazy) | 难易程度 (Medium) | 难易程度 (Hard) |
+|----------------|-----------------|-------------------|-----------------|
+| MobileNet0.25  | 0.907           | 0.881             | 0.738           |
+| Resnet50       | 0.954           | 0.940             | 0.844           |
+| ShuffleNetV2   | 0.877           | 0.847             | 0.679           |
+
+### PR 曲线对比（多图并排）  
+<table>
+  <tr>
+    <td>
+      <img src="pr_curves/mobilenet0.25_pr_curve.png" width="300" alt="MobileNet0.25 PR Curve">  
+      <p align="center"><small>MobileNet0.25 PR 曲线</small></p>
+    </td>
+    <td>
+      <img src="pr_curves/resnet50_pr_curve.png" width="300" alt="ResNet50 PR Curve">  
+      <p align="center"><small>ResNet50 PR 曲线</small></p>
+    </td>
+    <td>
+      <img src="pr_curves/shufflenetv2_pr_curve.png" width="300" alt="ShuffleNetV2 PR Curve">  
+      <p align="center"><small>ShuffleNetV2 PR 曲线</small></p>
+    </td>
+  </tr>
+</table>  
+
 # 模型训练
 
 本项目提供RetinaFace三种网络架构resnet50、mobilenet0.25、shufflenetv2_Final进行对比实验
@@ -112,7 +138,9 @@ python yolo111111.py
 
 1.需要先生成相应的文本文件
 
-```python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
+```text
+python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
+```
 
 2.在widerface_evaluate中进行评估
 ```text
@@ -138,8 +166,9 @@ python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50
 
 三、基线模型yolov8评估widerface val：
 1.需要先生成相应的文本文件
-
-```python yolo_test.py```
+```text
+python yolo_test.py
+```
 
 2.在widerface_evaluate中进行评估
 ```text
