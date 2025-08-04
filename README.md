@@ -154,12 +154,13 @@ python yolo111111.py
 python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
 ```
 
-2.在widerface_evaluate中进行评估
+2.在widerface_evaluate中进行评估（可选）
 ```text
 cd ./widerface_evaluate
 python setup.py build_ext --inplace
 python evaluation.py
 ```
+
 
 二、RetinaFace模型评估FDDB：
 
@@ -167,14 +168,20 @@ python evaluation.py
 ```text
 ./data/FDDB/images/
 ```
+FDDB数据集下载链接：
+
+https://drive.google.com/file/d/17t4WULUDgZgiSy5kpCax4aooyPaz3GQH/view
+
 测试命令：
 ```text
 python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
 ```
+
 其中：
 
 - --trained_model 指定训练好的模型权重文件路径
 - --network 指定 backbone 网络，可选 mobile0.25 或 resnet50 或 shufflenetv2
+
 
 三、基线模型yolov8评估widerface val：
 
