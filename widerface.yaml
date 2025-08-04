@@ -1,0 +1,6 @@
+# widerface.yaml
+train: data/widerface/train/images  # 训练集图像路径
+val: data/widerface/val/images      # 验证集图像路径
+
+nc: 1  # 类别数量（人脸）
+names: ['face']  # 类别名称
