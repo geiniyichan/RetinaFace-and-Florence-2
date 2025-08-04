@@ -33,6 +33,13 @@ CUDA  12.4
 ```
 百度网盘链接https://pan.baidu.com/s/1kPN-A-jyjTwXn62OPSW_fA 提取码: GNYC
 # 模型参数的下载
+
+本项目使用RetinaFace大规模人脸检测模型进行训练实验与测试对比，其架构如下：
+
+
+<img width="2048" height="489" alt="image" src="https://github.com/user-attachments/assets/a1c37760-d8bb-4fc4-a743-5d2e5b674ecd" />
+
+
 本项目所有已训练好的模型参数均提供下载网盘，其中，关于RetinaFace的模型参数，直接存放入weights文件夹即可使用
 
 放置格式为：
@@ -70,15 +77,31 @@ Florence-2 由 Microsoft 于 2024 年 6 月发布，是在 MIT 许可下开源�
 https://huggingface.co/microsoft/Florence-2-base-ft
 
 https://huggingface.co/microsoft/Florence-2-large-ft
+
+模型下载完整文件夹后放在root根目录即可，命名为```Florence-2-base-ft```与```Florence-2-base-ft```
 # 模型训练
 本项目提供RetinaFace三种网络架构resnet50、mobilenet0.25、shufflenetv2_Final进行对比实验
 
+训练命令：
+```text
+python Pytorch_Retinaface/train.py --network resnet50
+
+python Pytorch_Retinaface/train.py --network mobile0.25
+
+python Pytorch_Retinaface/train.py --network shufflenetv2
+```
+
+yolov8基线模型对比实验命令：
+
+```text
+python yolo111111.py
+```
 # 测试评估
-评估 widerface val：
+RetinaFace模型评估 widerface val：
 
 1.需要先生成相应的文本文件
 
-```python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50```
+python test_widerface.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2```
 
 ２．在widerface_evaluate中进行评估
 ```text
@@ -86,3 +109,28 @@ cd ./widerface_evaluate
 python setup.py build_ext --inplace
 python evaluation.py
 ```
+
+RetinaFace模型评估FDDB：
+
+数据集目录应为：
+```text
+./data/FDDB/images/
+
+测试命令：
+```text
+python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50 or shufflenetv2
+```
+其中：
+
+- --trained_model 指定训练好的模型权重文件路径
+- --network 指定 backbone 网络，可选 mobile0.25 或 resnet50 或 shufflenetv2
+# 大规模人群画像实现流程
+1.RetinaFace模型进行人脸检测
+
+使用 detect_single_image.py 脚本对单张图片进行人脸检测
+
+示例命令
+```text
+python Pytorch_Retinaface/detect_single_image.py --trained_model ./weights/Resnet50_Final.pth --image_path ./test.jpg
+```
+2.得到大规模人群的人脸检测图像
