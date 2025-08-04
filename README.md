@@ -1,7 +1,7 @@
 # geiniyichan-RetinaFace-and-Florence-2
 该项目使用开源的人脸检测模型RetinaFace与语义描述模型Florence-2相结合，对大规模人群进行人脸检测并对其进行详细描述
 
-项目思路：通过训练大规模人脸检测模型RetinaFace在复杂环境下的多人脸并行检测能力，并在检测出人脸与切割的基础上，继续使用谷歌开源的Florence-2模型中的图像描述任务，对人脸的细节与表情情绪进行更深入的描述，从而得到大规模人群画像的表达。
+项目思路：通过训练大规模人脸检测模型RetinaFace在复杂环境下的多人脸并行检测能力，并在检测出人脸与切割的基础上，继续使用微软Azure AI 团队开源的Florence-2模型中的图像描述任务，对人脸的细节与表情情绪进行更深入的描述，从而得到大规模人群画像的表达。
 
 本项目对RetinaFace还进行了多网络架构的对比，包括了resnet50、mobilenet0.25、shufflenetv2_Final，并使用yolov8作为基线模型进行深入对比，验证其在复杂环境下大规模人脸检测的优越性
 
@@ -88,6 +88,7 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 模型下载完整文件夹后放在root根目录即可，命名为```Florence-2-base-ft```与```Florence-2-base-ft```
 
 # RetinaFace性能结果
+### 网络架构对比
 三种不同网络架构评估结果对比：
 | 网络架构       | 难易程度 (Eazy) | 难易程度 (Medium) | 难易程度 (Hard) |
 |----------------|-----------------|-------------------|-----------------|
@@ -95,23 +96,30 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 | Resnet50       | 0.954           | 0.940             | 0.844           |
 | ShuffleNetV2   | 0.877           | 0.847             | 0.679           |
 
-### PR 曲线对比（多图并排）  
-<table>
+### PR 曲线对比  
+<table align="center">
   <tr>
+    <!-- 第一列：MobileNet0.25 -->
     <td>
-      <img src="pr_curves/mobilenet0.25_pr_curve.png" width="300" alt="MobileNet0.25 PR Curve">  
-      <p align="center"><small>MobileNet0.25 PR 曲线</small></p>
+      <img src="pr_curves/mobilenet0.25_pr_curve.png" alt="MobileNet0.25 PR Curve">  
+      <p align="center"><small>MobileNet0.25</small></p>
     </td>
+    <!-- 第二列：ResNet50 -->
     <td>
-      <img src="pr_curves/resnet50_pr_curve.png" width="300" alt="ResNet50 PR Curve">  
-      <p align="center"><small>ResNet50 PR 曲线</small></p>
+      <img src="pr_curves/resnet50_pr_curve.png" alt="ResNet50 PR Curve">  
+      <p align="center"><small>ResNet50</small></p>
     </td>
+    <!-- 第三列：ShuffleNetV2 -->
     <td>
-      <img src="pr_curves/shufflenetv2_pr_curve.png" width="300" alt="ShuffleNetV2 PR Curve">  
-      <p align="center"><small>ShuffleNetV2 PR 曲线</small></p>
+      <img src="pr_curves/shufflenetv2_pr_curve.png" alt="ShuffleNetV2 PR Curve">  
+      <p align="center"><small>ShuffleNetV2</small></p>
     </td>
   </tr>
-</table>  
+</table>
+
+### 效果展示
+![Uploading image.png…]()
+![Uploading image.png…]()
 
 # 模型训练
 
