@@ -1,0 +1,1 @@
+这个文件夹用来存放retinaface的evaluate文件，该文件在Pytorch_Retinaface/widerface_evaluate中，你可以直接在Pytorch_Retinaface/widerface_evaluate中进行评估，也可以迁移到此进行。
