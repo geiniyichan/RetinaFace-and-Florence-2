@@ -100,30 +100,19 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 <table align="center">
   <tr>
     <!-- MobileNet0.25 结果列 -->
-    <td style="text-align: center; padding: 0 10px;">
-      <img src="detection_results/MobileNet0.25.png" 
-           alt="MobileNet0.25 检测结果" 
-           width="300" 
-           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
-      <p style="text-align: center; font-weight: bold; margin-top: 8px;">MobileNet0.25</p>
+    <td style="text-align: center;">
+      <img src="detection_results/MobileNet0.25.png" alt="MobileNet0.25 Result" width="300">  
+      <p style="text-align: center; font-weight: bold;">MobileNet0.25</p>
     </td>
-    
     <!-- ResNet50 结果列 -->
-    <td style="text-align: center; padding: 0 10px;">
-      <img src="detection_results/ResNet50.png" 
-           alt="ResNet50 检测结果" 
-           width="300" 
-           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
-      <p style="text-align: center; font-weight: bold; margin-top: 8px;">ResNet50</p>
+    <td style="text-align: center;">
+      <img src="detection_results/ResNet50.png" alt="ResNet50 Result" width="300">  
+      <p style="text-align: center; font-weight: bold;">ResNet50</p>
     </td>
-    
     <!-- ShuffleNetV2 结果列 -->
-    <td style="text-align: center; padding: 0 10px;">
-      <img src="detection_results/ShuffleNetV2.png" 
-           alt="ShuffleNetV2 检测结果" 
-           width="300" 
-           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
-      <p style="text-align: center; font-weight: bold; margin-top: 8px;">ShuffleNetV2</p>
+    <td style="text-align: center;">
+      <img src="detection_results/ShuffleNetV2.png" alt="ShuffleNetV2 Result" width="300">  
+      <p style="text-align: center; font-weight: bold;">ShuffleNetV2</p>
     </td>
   </tr>
 </table>
@@ -211,6 +200,7 @@ python evaluation.py
 python Pytorch_Retinaface/detect_single_image.py --trained_model ./weights/Resnet50_Final.pth --image_path ./test.jpg
 ```
 2.得到大规模人群的人脸检测图像
+
 
 
 3.进行切割的基础上，使用Florence-2模型进行语义描述
