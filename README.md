@@ -8,9 +8,42 @@
 
 # 安装
 本项目所需环境
+
 PyTorch  2.5.1
+
 Python  3.12(ubuntu22.04)
+
 CUDA  12.4
-（没提到的须自行安装）
+
+（没提到的自行安装🤭）
 
 并可以使用git clone https://github.com/geiniyichan/RetinaFace-and-Florence-2.git 进行克隆项目
+# 数据集
+需下载widerface数据集进行模型训练与测试
+
+数据集目录格式：
+```text
+ ./data/widerface/
+    train/
+      images/
+      label.txt
+    val/
+      images/
+      wider_val.txt
+```
+# 模型参数的下载
+本项目所有已训练好的模型参数均提供下载网盘，其中，关于RetinaFace的模型参数，直接存放入weights文件夹即可使用
+
+放置格式为：
+```text
+./weights/
+      mobilenet0.25_Final.pth
+      mobilenetV1X0.25_pretrain.tar
+      Resnet50_Final.pth
+      shufflenetv2_Final.pth
+      ghostnet_1x.pth
+```
+
+关于Florence-2模型参数为开源模型，此提供其base-ft与large-ft供选择
+
+模型性能与其大小有关，根据自身需求进行选择不同的模型参数
