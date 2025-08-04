@@ -17,14 +17,14 @@ CUDA  12.4
 
 （没提到的自行安装🤭）
 
-并可以使用git clone https://github.com/geiniyichan/RetinaFace-and-Florence-2.git 进行克隆项目
+并可以使用```git clone https://github.com/geiniyichan/RetinaFace-and-Florence-2.git```进行克隆项目
 
 # 数据集
 
 需下载widerface数据集进行模型训练与测试
 
 数据集目录格式：
-```text
+text
  ./data/widerface/
     train/
       images/
