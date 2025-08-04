@@ -99,20 +99,31 @@ https://huggingface.co/microsoft/Florence-2-large-ft
 ### PR 曲线对比  
 <table align="center">
   <tr>
-    <!-- 第一列：MobileNet0.25 -->
-    <td>
-      <img src="pr_curves/mobilenet0.25_pr_curve.png" alt="MobileNet0.25 PR Curve">  
-      <p align="center"><small>MobileNet0.25</small></p>
+    <!-- MobileNet0.25 结果列 -->
+    <td style="text-align: center; padding: 0 10px;">
+      <img src="detection_results/MobileNet0.25.png" 
+           alt="MobileNet0.25 检测结果" 
+           width="300" 
+           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
+      <p style="text-align: center; font-weight: bold; margin-top: 8px;">MobileNet0.25</p>
     </td>
-    <!-- 第二列：ResNet50 -->
-    <td>
-      <img src="pr_curves/resnet50_pr_curve.png" alt="ResNet50 PR Curve">  
-      <p align="center"><small>ResNet50</small></p>
+    
+    <!-- ResNet50 结果列 -->
+    <td style="text-align: center; padding: 0 10px;">
+      <img src="detection_results/ResNet50.png" 
+           alt="ResNet50 检测结果" 
+           width="300" 
+           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
+      <p style="text-align: center; font-weight: bold; margin-top: 8px;">ResNet50</p>
     </td>
-    <!-- 第三列：ShuffleNetV2 -->
-    <td>
-      <img src="pr_curves/shufflenetv2_pr_curve.png" alt="ShuffleNetV2 PR Curve">  
-      <p align="center"><small>ShuffleNetV2</small></p>
+    
+    <!-- ShuffleNetV2 结果列 -->
+    <td style="text-align: center; padding: 0 10px;">
+      <img src="detection_results/ShuffleNetV2.png" 
+           alt="ShuffleNetV2 检测结果" 
+           width="300" 
+           style="display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 4px;">  
+      <p style="text-align: center; font-weight: bold; margin-top: 8px;">ShuffleNetV2</p>
     </td>
   </tr>
 </table>
