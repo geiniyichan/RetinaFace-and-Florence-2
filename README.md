@@ -31,6 +31,7 @@ CUDA  12.4
       images/
       wider_val.txt
 ```
+百度网盘链接https://pan.baidu.com/s/1kPN-A-jyjTwXn62OPSW_fA 提取码: GNYC
 # 模型参数的下载
 本项目所有已训练好的模型参数均提供下载网盘，其中，关于RetinaFace的模型参数，直接存放入weights文件夹即可使用
 
@@ -43,6 +44,22 @@ CUDA  12.4
       shufflenetv2_Final.pth
       ghostnet_1x.pth
 ```
+百度网盘链接: https://pan.baidu.com/s/1DJbCn0THTYMZYU0wx1O-iQ 提取码: GNYC
+
+Florence-2 由 Microsoft 于 2024 年 6 月发布，是在 MIT 许可下开源的高级、轻量级基础视觉语言模型。该模型非常有吸引力，因为它体积小（0.2B 和 0.7B）并且在各种计算机视觉和视觉语言任务上具有强大的性能。 尽管体积小，但它的效果可与 Kosmos-2 等更大的型号相媲美。该模型的优势不在于复杂的架构，而在于大规模的 FLD-5B 数据集，该数据集由 1.26 亿张图像和 54 亿条综合视觉注释组成。
+
+该模型支持多种任务：
+- Caption,
+- Detailed Caption,
+- More Detailed Caption,
+- Dense Region Caption,
+- Object Detection,
+- OCR,
+- Caption to Phrase Grounding,
+- segmentation,
+- Region proposal,
+- OCR,
+- OCR with Region.
 
 关于Florence-2模型参数为开源模型，此提供其base-ft与large-ft供选择
 
